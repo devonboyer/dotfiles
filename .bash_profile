@@ -11,4 +11,4 @@ export PATH=$PATH:$(go env GOPATH)/bin
 export GOPATH=$(go env GOPATH)
 
 # Set VS Code as default editor
-export EDITOR=$(code --wait)
+export EDITOR='code --wait'
