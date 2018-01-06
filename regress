@@ -18,12 +18,12 @@ usage() {                                                       # print usage me
 regress_prefix() {                                              # regression test for a prefix
     prefix="${3}"
 
-    if [ ! -r "${prefix}.in" ]; then                            # input file exits with read permission ?
-          echo "cannot read input file ${prefix}.in" >&2 	
-          exit 1
-      elif [ ! -r "${prefix}.out" ]; then
-          echo "cannot read output file ${prefix}.out" >&2      # input file exits with read permission ?
-          exit 1
+    if [ ! -r "${prefix}.in" ]; then                            # input file exists with read permission ?
+        echo "cannot read input file ${prefix}.in" >&2 	
+        exit 1
+    elif [ ! -r "${prefix}.out" ]; then
+        echo "cannot read output file ${prefix}.out" >&2        # input file exists with read permission ?
+        exit 1
     fi
 
     temp=$(mktemp tmp.XXXX)
@@ -34,9 +34,9 @@ regress_prefix() {                                              # regression tes
         $("${1}" ${2} < "${prefix}.in" > "${temp}")
     fi
 
-      diff "${temp}" "${prefix}.out"
-      if [ "${?}" -eq 0 ]; then
-          echo "identical output for prefix \"${prefix}\""
+    diff "${temp}" "${prefix}.out"
+    if [ "${?}" -eq 0 ]; then
+        echo "identical output for prefix \"${prefix}\""
     fi
     rm "${temp}"
 }
