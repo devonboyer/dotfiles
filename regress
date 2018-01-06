@@ -22,7 +22,7 @@ regress_prefix() {                                              # regression tes
           echo "cannot read input file ${prefix}.in" >&2 	
           exit 1
       elif [ ! -r "${prefix}.out" ]; then
-          echo "cannot read output file ${prefix}.out" >&2    # input file exits with read permission ?
+          echo "cannot read output file ${prefix}.out" >&2      # input file exits with read permission ?
           exit 1
     fi
 
