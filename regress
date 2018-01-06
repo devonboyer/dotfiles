@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Regression tests a program
+# Regression testing tool for simple command line programs.
 #
 # Usage: regress [ -o 'options' ] [ prefix-file ] [ -p prefix-list ]
 #	-o default string of options required by the program to generate the required output
