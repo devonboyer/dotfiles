@@ -2,7 +2,7 @@
 #
 # Regression testing tool for simple command line programs.
 #
-# Usage: regress [ -o 'options' ] [ prefix-file ] [ -p prefix-list ]
+# Usage: regress program [ -o 'options' ] [ prefix-file ] [ -p prefix-list ]
 #	-o default string of options required by the program to generate the required output
 #	-p list of prefixes for files containing input and expected output for each regression test
 # Examples:
