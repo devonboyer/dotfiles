@@ -7,8 +7,8 @@ sshfs_uwaterloo () { sshfs $UW_USERID@linux.student.cs.uwaterloo.ca:/u5/$UW_USER
 # UWaterloo undergrad environment
 alias sshuw='ssh_uwaterloo'
 alias sshfsuw='mkdir -p ~/uwaterloo && sshfs_uwaterloo ~/uwaterloo'
-alias uw='sshfsuw && sshuw'
+alias uw='sshuw'
 
 # 3B courses
-alias cs343='sshfsuw && cd ~/uwaterloo/cs343 && code .'
-alias cs354='sshfsuw && cd ~/uwaterloo/cs354 && code .'
+alias cs343='cd ~/uwaterloo/cs343 && code .'
+alias cs354='cd ~/uwaterloo/cs354 && code .'
