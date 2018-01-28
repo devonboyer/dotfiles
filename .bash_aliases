@@ -11,4 +11,5 @@ alias uw='sshuw'
 
 # 3B courses
 alias cs343='cd ~/uwaterloo/cs343 && code .'
-alias cs354='cd ~/uwaterloo/cs354 && code .'
+alias cs454='cd ~/uwaterloo/cs454 && code .'
+alias cs456='cd ~/uwaterloo/cs456 && code .'
