@@ -3,8 +3,6 @@
 # Debug
 [[ -n $DEBUG ]] && set -x
 
-KUBE_PS1_SYMBOL_COLOR="blue"
-
 _kube_ps1_symbol() {
   if ((BASH_VERSINFO[0] >= 4)) && [[ $'\u2388 ' != "\\u2388 " ]]; then
     KUBE_PS1_SYMBOL=$'\u2388 '
