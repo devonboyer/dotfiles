@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# Add the following lines to ~/.bash_profile:
+# source "/path/to/kubeps1.sh"
+# export PS1="\u@\h \W \[\$(kube_ps1)\] $ "
 
 # Debug
 [[ -n $DEBUG ]] && set -x
@@ -22,11 +26,10 @@ _kube_ps1_context() {
 }
 
 _kube_ps1_namespace() {
-  namespace="$(cat ~/.kube/config | \
+  echo "$(cat ~/.kube/config | \
     grep "namespace:" | \
     sed "s/namespace: //" | \
     tr -d '[:space:]')"
-  echo "$(tput setaf 36)${namespace}$(tput sgr0)"
 }
 
 # Build prompt
@@ -39,7 +42,7 @@ kube_ps1()
     namespace=$(_kube_ps1_namespace)
 
     if [ -n $namespace ]; then
-        KUBE_PS1+=":$namespace"
+        KUBE_PS1+=":$(tput setaf 36)$namespace$(tput sgr0)"
     fi
 
     echo "(${KUBE_PS1})"
