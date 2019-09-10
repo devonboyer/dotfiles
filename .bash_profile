@@ -3,6 +3,10 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
+# Setup GOPATH
+export GOPATH=$HOME
+export PATH=$PATH:$GOPATH/bin
+
 # Set VS Code as default editor
 export EDITOR='code --wait'
 
@@ -18,7 +22,3 @@ if [ -f "path/to/kube-ps1.sh" ]; then
 else
   export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "    # git branch
 fi
-
-# Setup GOPATH
-export GOPATH=$HOME
-export PATH=$PATH:$GOPATH/bin
