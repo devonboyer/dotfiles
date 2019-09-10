@@ -20,9 +20,5 @@ else
 fi
 
 # Setup GOPATH
-which go > /dev/null
-if [ $? -eq 0 ]; then
-  export GOPATH=$HOME
-  export PATH=$PATH:$(go env GOPATH)/bin
-  export GOPATH=$(go env GOPATH)
-fi
+export GOPATH=$HOME
+export PATH=$PATH:$GOPATH/bin
