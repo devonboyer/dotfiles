@@ -4,9 +4,9 @@
 # source "/path/to/kubectx.sh"
 
 kubectx() {
-    kubectl config set-context $1
+    kubectl config use-context $1
 }
 
 kubens() {
-    kubectl config set-context $(kubectl config current-context) --namespace=$1
+    kubectl config use-context $(kubectl config current-context) --namespace=$1
 }
