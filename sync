@@ -1,0 +1,32 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+FILES=(
+    ".zshrc"
+    ".gitconfig"
+    ".config/ghostty/config"
+)
+
+if [ "$1" = "local" ]; then
+    echo "This will overwrite local configs with versions from the repo:"
+    for f in "${FILES[@]}"; do echo "  - ~/$f"; done
+    read -p "Continue? (y/n) " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        for f in "${FILES[@]}"; do
+            mkdir -p ~/"$(dirname "$f")"
+            cp "$DIR/$f" ~/"$f"
+            echo "✓ Updated ~/$f"
+        done
+    fi
+elif [ "$1" = "remote" ]; then
+    for f in "${FILES[@]}"; do
+        mkdir -p "$DIR/$(dirname "$f")"
+        cp ~/"$f" "$DIR/$f"
+        echo "✓ Saved $f to repo"
+    done
+else
+    echo "sync local  - update local machine from repo"
+    echo "sync remote - save to repo"
+fi

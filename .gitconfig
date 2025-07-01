@@ -1,0 +1,23 @@
+[include]
+  path = /Users/devonboyer/.config/dev/gitconfig
+[user]
+  name = Devon Boyer
+  email = devon.boyer@shopify.com
+[credential]
+  helper = store
+[pull]
+  rebase = true
+[alias]
+  co = checkout
+  a = add --all
+  cm = commit -m
+  po = !git push origin $(git branch --show-current)
+  d = !git reset --hard && git clean -fd
+  pls = push --force-with-lease
+  ca = !git add -A && git commit --amend -av
+  cas = !git add -A && git commit --amend --no-edit
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
