@@ -20,13 +20,10 @@ if [ "$1" = "local" ]; then
             echo "✓ Updated ~/$f"
         done
     fi
-elif [ "$1" = "remote" ]; then
+else
     for f in "${FILES[@]}"; do
         mkdir -p "$DIR/$(dirname "$f")"
         cp ~/"$f" "$DIR/$f"
         echo "✓ Saved $f to repo"
     done
-else
-    echo "sync local  - update local machine from repo"
-    echo "sync remote - save to repo"
 fi
