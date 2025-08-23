@@ -3,6 +3,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 FILES=(
+    ".gitprompt.sh"
     ".zshrc"
     ".gitconfig"
     ".config/ghostty/config"
